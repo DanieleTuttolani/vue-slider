@@ -29,12 +29,28 @@ const games = [
 const app = Vue.createApp({
   data(){
     return{
-      toShow : 0,
+      gameIndex : 0,
       games
     }
+  },
+  methods:{
+   goForward(){
+    if(this.gameIndex === games.length - 1){
+      this.gameIndex = 0 ;
+     }else{
+     this.gameIndex++;
+     }
+   },
+   goBack(){
+     if(this.gameIndex === 0){
+       this.gameIndex = games.length - 1 ;
+      }else{
+      this.gameIndex--;
+    }
+   }
   }
 })
-
+console.log()
 
 
 app.mount('#root')

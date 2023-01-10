@@ -17,16 +17,17 @@
         <div class="container ">
             <div class="row align-items-center">
                 <div class="col-12 main-picture bordo p-0">
-                   <i id="prev"class="bi bi-arrow-left-circle-fill"></i> 
+                   <i id="prev" @click="goBack"  class="bi bi-arrow-left-circle-fill"></i> 
                     <div id= "target" class="img-list h-100">
-                        <!-- IMMAGINE BUTTATA QUA -->
-                        <img v-for='(game , i) in games' :src="game.image" v-show='i === toShow':alt="game.title">
+                        <!-- IMMAGINE   PRINCIPALE QUA -->
+                        <img v-for='(game , i) in games' :src="game.image" v-show='i === gameIndex':alt="game.title">
                     </div>
-                    <i id= "next" class="bi bi-arrow-right-circle-fill prova"></i> 
+                    <i id= "next" @click="goForward" class="bi bi-arrow-right-circle-fill prova"></i> 
                 </div>
+                <!-- THUMBNAILS -->
                 <div class="col thumb-wrapper d-flex">
-                    <div class="thumb">
-                        <img v-for='(game , i) in games' :src="game.image":alt="game.title">
+                    <div  v-for='(game , i) in games' class="thumb">
+                        <img :src="game.image":alt="game.title" :class='{"show" : i === gameIndex}'>
                     </div>
                 </div>
             </div>
