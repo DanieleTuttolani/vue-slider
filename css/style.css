@@ -1,0 +1,46 @@
+
+body{
+    font-family: sans-serif;
+    background-color: wheat;
+}
+
+/* generico*****************/
+.row{
+    padding-top: 10%;
+}
+.main-picture{
+    height: 700px;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.bi{
+    font-size: 3.5rem;
+    position: absolute;
+    bottom: 45%;
+    cursor: pointer;
+}
+#next{
+    left: 100%;
+}
+#prev{
+    right: 100%;
+}
+.active{
+    display: block;
+}
+.thumb-wrapper{
+    height: 150px;
+    background-color: black;
+    padding-top: 5px;
+    margin-top: 20px;
+}
+.thumb{
+    height: 140px;
+    width: calc(100% / 5);
+    padding: 5px;
+}
